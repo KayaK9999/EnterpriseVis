@@ -8,7 +8,7 @@ def rose():
     rose = {}
     copp = {}
     quata = {}
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/zcfzb.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/zcfzb.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     next(reader)
@@ -17,7 +17,7 @@ def rose():
             data[line[5][:4]+line[4]] = line
     f.close()
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_detail.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_detail.json', 'r')
     corr_detail = json.load(f)
     f.close()
 
@@ -55,7 +55,7 @@ def rose():
             copp[str(j)].append({i: quata})
         rose['9'].append({str(j): copp[str(j)]})
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/lrb.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/lrb.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     next(reader)
@@ -98,7 +98,7 @@ def rose():
             copp[str(j)].append({i: quata})
         rose['16'].append({str(j): copp[str(j)]})
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/xjlb.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/xjlb.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     next(reader)
@@ -158,7 +158,7 @@ def rose():
             copp[str(j)].append({i: quata})
         rose['31'].append({str(j): copp[str(j)]})
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/rose.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/rose.json', 'w')
     json.dump(rose, f, ensure_ascii=False, indent=2)
     f.close()   # 目标散点分布
 

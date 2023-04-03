@@ -16,13 +16,13 @@ def corr_ind_1(quota):
     corr_ind_temp = {}
     quota_di = {'总资产': 6, '总负债': 15}
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
     ind_copp = {prepare['copp']: {}}
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/zcfzb.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/zcfzb.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     next(reader)
@@ -89,15 +89,15 @@ def corr_ind_1(quota):
             str2 = temp[1][0] + ':' + str(round(temp[1][1], 2))
             corr_ind[i] = [str1, str2]
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_dt.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_dt.json', 'w')
     json.dump(data, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_ind.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_ind.json', 'w')
     json.dump({prepare['ind']: corr_ind}, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_ratio.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_ratio.json', 'w')
     json.dump(ind_ratio, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_line.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_line.json', 'w')
     json.dump(ind_line, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_copp.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_copp.json', 'w')
     json.dump(ind_copp, f, ensure_ascii=False, indent=2)
     f.close()
 
@@ -116,16 +116,16 @@ def corr_ind_2(quota):
     corr_ind_temp = {}
     quota_di = {'净利润': 6, '营业总支出': 12, '营业总收入': 10, '经营性现金流': 8, '投资性现金流': 14, '融资性现金流': 20}
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
     ind_copp = {prepare['copp']: {}}
 
     if quota in ('净利润', '营业总支出', '营业总收入'):
-        f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/lrb.csv', 'r', encoding='gbk')
+        f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/lrb.csv', 'r', encoding='gbk')
     else:
-        f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/xjlb.csv', 'r', encoding='gbk')
+        f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/xjlb.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     next(reader)
@@ -180,15 +180,15 @@ def corr_ind_2(quota):
             str2 = temp[1][0] + ':' + str(round(temp[1][1], 2))
             corr_ind[i] = [str1, str2]
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_dt.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_dt.json', 'w')
     json.dump(data, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_ind.json', 'w', encoding='utf-8')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_ind.json', 'w', encoding='utf-8')
     json.dump({prepare['ind']: corr_ind}, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_ratio.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_ratio.json', 'w')
     json.dump(ind_ratio, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_line.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_line.json', 'w')
     json.dump(ind_line, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_copp.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_copp.json', 'w')
     json.dump(ind_copp, f, ensure_ascii=False, indent=2)
     f.close()
 

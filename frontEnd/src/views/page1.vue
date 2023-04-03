@@ -68,8 +68,8 @@ import view1 from '@/components/view11.vue'
 import Table from '@/components/table.vue'
 import view3 from '@/components/view2.vue'
 import axios from 'axios'
-import corrCoppJson from '../../../../pyCharm/ybcProject/data/corr_copp.json'
-import corrDetail from '../../../../pyCharm/ybcProject/data/corr_detail.json'
+import corrCoppJson from '../../../backEnd/data/corr_copp.json'
+import corrDetail from '../../../backEnd/data/corr_detail.json'
 export default {
   name: 'page_1',
   data () {

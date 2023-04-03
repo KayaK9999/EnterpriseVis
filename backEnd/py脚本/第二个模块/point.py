@@ -3,6 +3,7 @@ import csv
 
 
 def point(level):
+    print('point')
     if level <= 1:
         return 0
 
@@ -10,7 +11,7 @@ def point(level):
     point = {}
     circul = [0, 0, [], []]
 
-    f = open('D:/File/毕业论文/DATA/数据处理/result_detail.csv', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_detail.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     for line in reader:
@@ -18,19 +19,19 @@ def point(level):
         # point[line[3]] = [[0, 0], '']
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat.json', 'r')
     eclat = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/frequent_{}.json'.format(level), 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/frequent_{}.json'.format(level), 'r')
     fre = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/frequent_2.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/frequent_2.json', 'r')
     fre2 = json.load(f)
     f.close()
 
@@ -73,11 +74,11 @@ def point(level):
 
     point[prepare['copp']][3] = 1
 
-    f = open('D:/File/毕业论文/DATA/数据处理/point_{}.json'.format(level), 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/point_{}.json'.format(level), 'w')
     json.dump(point, f, ensure_ascii=False, indent=2)
     f.close()   # 全量散点分布
 
-    # f = open('D:/File/毕业论文/DATA/数据处理/circul_{}.json'.format(level), 'w')
+    # f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/circul_{}.json'.format(level), 'w')
     # json.dump(circul, f, ensure_ascii=False, indent=2)
     # f.close()   # 目标散点分布
 

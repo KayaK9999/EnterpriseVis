@@ -3,16 +3,17 @@ import csv
 
 
 def axis(k):
+    print('axis')
     data_kind = []
     data_copp = []
     vertical = {}
     axis = {}
-    f = open('D:/File/毕业论文/DATA/数据处理/result_kind.csv', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_kind.csv', 'r', encoding = 'gbk')
     reader = csv.reader(f)
     for line in reader:
         data_kind.append(line)
     f.close()
-    f = open('D:/File/毕业论文/DATA/数据处理/result_detail.csv', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_detail.csv', 'r', encoding = 'gbk')
     reader = csv.reader(f)
     next(reader)
     for line in reader:
@@ -40,7 +41,7 @@ def axis(k):
         pos = i[:i.rfind('_')]
         axis[pos].append({i: vertical[i]})
 
-    f = open('D:/File/毕业论文/DATA/数据处理/axis.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/axis2.json', 'w')
     json.dump(axis, f, ensure_ascii=False, indent=2)
     f.close()
 

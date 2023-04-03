@@ -6,7 +6,7 @@
 
 <script>
 import * as d3 from 'd3'
-import roseJson from '../../../../pyCharm/ybcProject/data/rose.json'
+import roseJson from '../../../backEnd/data/rose.json'
 export default {
   name: 'view1_2',
   data () {

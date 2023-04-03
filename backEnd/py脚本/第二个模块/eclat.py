@@ -3,18 +3,18 @@ import csv
 
 
 def eclat(copp, k):
-
+    print('eclat')
     data = []
     vertical = {}
     eclat = {}
     
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
-    f_in = 'D:/File/毕业论文/DATA/数据处理/result_kind.csv'
+    f_in = '/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_kind.csv'
 
-    file = open(f_in, 'r')
+    file = open(f_in, 'r', encoding='gbk')
     reader = csv.reader((line.replace('\0', '') for line in file))
     for line in reader:
         data.append(line)
@@ -34,20 +34,20 @@ def eclat(copp, k):
         for j in data[i][1:]:
             vertical[j].append(i)  # 生成垂直数据集
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat.json', 'w')
     json.dump(vertical, f, ensure_ascii=False, indent=2)
     f.close()    
 
     for i in eclat.keys():
         eclat[i] = len(vertical[i])/length
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat_1.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat_1.json', 'w')
     json.dump(eclat, f, ensure_ascii=False, indent=2)
     f.close()
 
     prepare['k'] = k
     prepare['length'] = length
     prepare['loc_set'] = ['', '', '', '', '', '', '', '', '', '']
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'w')
     json.dump(prepare, f, ensure_ascii=False, indent=2)
     f.close()
 

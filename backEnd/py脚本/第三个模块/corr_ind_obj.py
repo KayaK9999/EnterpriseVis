@@ -4,7 +4,7 @@ import json
 def ring(ind_dt):
     ring = {}
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     k = prepare['k']
     f.close()
@@ -70,13 +70,13 @@ def ring(ind_dt):
 
 def corr_ind_obj(c_ind, dis):
     print('corr_ind_obj')
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_dt.json', 'r')  # 折线图数据
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_dt.json', 'r')  # 折线图数据
     ind_dt = json.load(f)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_ratio.json', 'r')  # 折线图数据
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_ratio.json', 'r')  # 折线图数据
     ind_ratio = json.load(f)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_line.json', 'r')  # 折线图标签
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_line.json', 'r')  # 折线图标签
     ind_line = json.load(f)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
@@ -98,11 +98,11 @@ def corr_ind_obj(c_ind, dis):
             temp2[i] = ind_dt[i]
     ring_obj = {prepare['ind']: ring(temp1), c_ind: ring(temp2)}
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_ratio_obj.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_ratio_obj.json', 'w')
     json.dump(ind_ratio_obj, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ind_line_obj.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ind_line_obj.json', 'w')
     json.dump(ind_line_obj, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/ring_obj.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/ring_obj.json', 'w')
     json.dump(ring_obj, f, ensure_ascii=False, indent=2)
     f.close()   # 目标散点分布
 

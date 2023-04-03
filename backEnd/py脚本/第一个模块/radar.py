@@ -89,11 +89,11 @@ def radar(copp):
                 'zzcbcl': [],
                 'zfzbcl': []
                 }
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/radar.json', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/radar.json', 'r', encoding='gbk')
     radar = json.load(f)
     f.close()
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_detail.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_detail.json', 'r')
     corr_detail = json.load(f)
     f.close()
 
@@ -127,11 +127,11 @@ def radar(copp):
                            float(radar_temp[i]['zfzbcl'])
                            ]
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/radar_axis.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/radar_axis.json', 'w')
     json.dump(radar_axis, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/radar_detail.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/radar_detail.json', 'w')
     json.dump(radar_detail, f, ensure_ascii=False, indent=2)
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/bord.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/bord.json', 'w')
     json.dump(k_means(radar_axis), f, ensure_ascii=False, indent=2)
     f.close()
 

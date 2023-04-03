@@ -6,11 +6,11 @@ def colour(loc_i, level):
     frequent = []
     pos = loc_i[:loc_i.rfind('_')]
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat.json', 'r')
     eclat = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
@@ -18,7 +18,7 @@ def colour(loc_i, level):
         for i in range(prepare['k']):
             frequent.append([list(eclat[pos+'_'+str(i)]), 1, pos+'_'+str(i)])
     else:
-        f = open('D:/File/毕业论文/DATA/数据处理/frequent_{}.json'.format(level-1), 'r')
+        f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/frequent_{}.json'.format(level-1), 'r')
         fre = json.load(f)
         f.close()
         for i in fre:
@@ -27,31 +27,32 @@ def colour(loc_i, level):
                 sup = len(temp)/(len(i[0])/i[1])
                 if sup > 1/prepare['k'] and len(temp) >= 3:
                     frequent.append([temp, sup, i[2]])
-    f = open('D:/File/毕业论文/DATA/数据处理/frequent_{}.json'.format(level), 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/frequent_{}.json'.format(level), 'w')
     json.dump(frequent, f, ensure_ascii=False, indent=2)
     f.close() 
 
 
 def eclat_cluster(loc_i, level):
+    print('eclat_cluster')
     colour(loc_i, level)
 
     comm_set = []
     eclat = {}
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat.json', 'r')
     data = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat_{}.json'.format(level), 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat_{}.json'.format(level), 'r')
     data_obj = json.load(f)
     f.close()
 
     prepare['loc_set'][level - 1] = loc_i
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'w')
     json.dump(prepare, f, ensure_ascii=False, indent=2)
     f.close()
 
@@ -73,7 +74,7 @@ def eclat_cluster(loc_i, level):
     for i in range(level):
         eclat[prepare['loc_set'][i]] = -1
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat_{}.json'.format(level+1), 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat_{}.json'.format(level+1), 'w')
     json.dump(eclat, f, ensure_ascii=False, indent=2)
     f.close()   
 
@@ -81,4 +82,4 @@ def eclat_cluster(loc_i, level):
 
 
 if __name__ == "__main__":
-    print(eclat_cluster('21_1', 3))
+    print(eclat_cluster('21_0', 3))

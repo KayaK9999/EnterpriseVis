@@ -28,7 +28,7 @@
 
 <script>
 import view4 from '@/components/view4.vue'
-import corrInd from '../../../../pyCharm/ybcProject/data/corr_ind.json'
+import corrInd from '../../../backEnd/data/corr_ind.json'
 import axios from 'axios'
 export default {
   name: 'page_3',

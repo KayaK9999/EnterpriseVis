@@ -2,6 +2,7 @@ import json
 
 
 def circul(level):
+    print('circle')
     if level <= 1:
         return 0
 
@@ -9,11 +10,11 @@ def circul(level):
     circul = {}
     ring = []
 
-    f = open('D:/File/毕业论文/DATA/数据处理/prepare.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'r')
     prepare = json.load(f)
     f.close()
 
-    f = open('D:/File/毕业论文/DATA/数据处理/eclat.json', 'r')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/eclat.json', 'r')
     eclat = json.load(f)
     f.close()
 
@@ -42,7 +43,7 @@ def circul(level):
         circul_d[pos+'_'+str(i)] = circul_d[pos+'_'+str(i)] + ring
     circul[prepare['loc_set'][level-2]] = circul_d
 
-    f = open('D:/File/毕业论文/DATA/数据处理/circul_{}.json'.format(level), 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/circul_{}.json'.format(level), 'w')
     json.dump(circul, f, ensure_ascii=False, indent=2)
     f.close()   # 目标散点分布
 

@@ -8,7 +8,7 @@ def corr_copp(copp):
     corr_copp = {'zcfz': ['', ''], 'yysz': ['', ''], 'xjll': ['', '']}
     detail = {}
     para_detail = {}
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/result_detail.csv', 'r' , encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_detail.csv', 'r' , encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     for line in reader:
@@ -86,13 +86,13 @@ def corr_copp(copp):
         for j in corr_copp[i]:
             detail[j] = list(data_copp[j])
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_copp.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_copp.json', 'w')
     json.dump(corr_copp, f, ensure_ascii=False, indent=2)
     f.close()
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/corr_detail.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/corr_detail.json', 'w')
     json.dump(detail, f, ensure_ascii=False, indent=2)
     f.close()
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/para_detail.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/para_detail.json', 'w')
     json.dump(para_detail, f, ensure_ascii=False, indent=2)
     f.close()
 

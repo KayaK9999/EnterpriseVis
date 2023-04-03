@@ -8,12 +8,12 @@ def axis(k):
     data_copp = []
     vertical = {}
     axis = {}
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/result_kind.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_kind.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     for line in reader:
         data_kind.append(line)
     f.close()
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/result_detail.csv', 'r', encoding='gbk')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_detail.csv', 'r', encoding='gbk')
     reader = csv.reader(f)
     next(reader)
     for line in reader:
@@ -41,7 +41,7 @@ def axis(k):
         pos = i[:i.rfind('_')]
         axis[pos].append({i: vertical[i]})
 
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/axis.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/axis.json', 'w')
     json.dump(axis, f, ensure_ascii=False, indent=2)
     f.close()
 

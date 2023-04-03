@@ -5,11 +5,12 @@
 </template>
 
 <script>
-import corrInd from '../../../../pyCharm/ybcProject/data/corr_ind.json'
-import industryRatioJson from '../../../../pyCharm/ybcProject/data/ind_ratio_obj.json'
-import industryLineJson from '../../../../pyCharm/ybcProject/data/ind_line_obj.json'
-import copJson from '../../../../pyCharm/ybcProject/data/ind_copp.json'
-import ringJson from '../../../../pyCharm/ybcProject/data/ring_obj.json'
+import corrInd from '../../../backEnd/data/corr_ind.json'
+import industryRatioJson from '../../../backEnd/data/ind_ratio_obj.json'
+import industryLineJson from '../../../backEnd/data/ind_line_obj.json'
+import copJson from '../../../backEnd/data/ind_copp.json'
+import ringJson from '../../../backEnd/data/ring_obj.json'
+
 import * as d3 from 'd3'
 export default {
   name: 'view_4',
@@ -105,8 +106,7 @@ export default {
         .attr('stroke', 'black')
         .style('stroke-dasharray', '5.5')
 
-      const linesPoints = this.5(industryRatioJson, industryLineJson, copJson)
-      console.log(linesPoints)
+      const linesPoints = this.getLineData(industryRatioJson, industryLineJson, copJson)
       // 画圆环
       const ringsData = that.getRingData(ringJson)
       const views = main.append('g')

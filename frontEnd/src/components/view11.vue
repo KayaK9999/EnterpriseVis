@@ -5,9 +5,9 @@
 </template>
 
 <script>
-import axisJson from '../../../../pyCharm/ybcProject/data/axis.json'
-import corrDetailJson from '../../../../pyCharm/ybcProject/data/corr_detail.json'
-import paraDetailJson from '../../../../pyCharm/ybcProject/data/para_detail.json'
+import axisJson from '../../../backEnd/data/axis.json'
+import corrDetailJson from '../../../backEnd/data/corr_detail.json'
+import paraDetailJson from '../../../backEnd/data/para_detail.json'
 import * as d3 from 'd3'
 export default {
   name: 'view1_1',

@@ -6,9 +6,9 @@
 </template>
 
 <script>
-import radarAxisJson from '../../../../pyCharm/ybcProject/data/radar_axis.json'
-import radarJson from '../../../../pyCharm/ybcProject/data/radar_detail.json'
-import bordJson from '../../../../pyCharm/ybcProject/data/bord.json'
+import radarAxisJson from '../../../backEnd/data/radar_axis.json'
+import radarJson from '../../../backEnd/data/radar_detail.json'
+import bordJson from '../../../backEnd/data/bord.json'
 import * as d3 from 'd3'
 export default {
   name: 'view_2',

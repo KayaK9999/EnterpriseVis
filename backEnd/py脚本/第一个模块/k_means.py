@@ -79,9 +79,9 @@ def k_means(copp, k):
     cop_clus = {}
     prepare = {}
 
-    f_in = '/Users/younggaming/Documents/pyCharm/ybcProject/data/cwkb20211231.csv'
-    f_out_detail = '/Users/younggaming/Documents/pyCharm/ybcProject/data/result_detail.csv'
-    f_out_kind = '/Users/younggaming/Documents/pyCharm/ybcProject/data/result_kind.csv'
+    f_in = '/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/cwkb20211231.csv'
+    f_out_detail = '/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_detail.csv'
+    f_out_kind = '/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/result_kind.csv'
 
     with open(f_in, 'r', encoding='gbk') as file:
         reader = csv.reader(file)
@@ -118,7 +118,7 @@ def k_means(copp, k):
     prepare['copp'] = copp
     prepare['ind'] = ind
     prepare['k'] = k
-    f = open('/Users/younggaming/Documents/pyCharm/ybcProject/data/prepare.json', 'w')
+    f = open('/Users/younggaming/Documents/GitHub/YbcCompletionProject/backEnd/data/prepare.json', 'w')
     json.dump(prepare, f, ensure_ascii=False, indent=2)
     f.close()
 
