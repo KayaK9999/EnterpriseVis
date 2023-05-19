@@ -9,6 +9,9 @@
       <button class="margin2 btn" :class="value1.eclat5>25 ? 'color5' : 'color0'" v-show=this.showAll[4]&this.isShow(4,value1.idx) @click="clickBtn(5, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat5}}%</button>
       <button class="margin2 btn" :class="value1.eclat6>25 ? 'color6' : 'color0'" v-show=this.showAll[5]&this.isShow(5,value1.idx) @click="clickBtn(6, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat6}}%</button>
     </div>
+    <View31></View31>
+    <View32></View32>
+    <View33></View33>
   </div>
 </template>
 
@@ -159,7 +162,7 @@ export default {
 .container {
   width: 560px;
   height: 800px;
-  /*border: 2px solid black;*/
+  border: 2px solid black;
 }
 
 .basic {
@@ -191,7 +194,7 @@ export default {
 }
 
 .btn {
-  width: 60px;
+  width: 65px;
   height: 24px;
   border-radius: 4px;
   text-align: center;
