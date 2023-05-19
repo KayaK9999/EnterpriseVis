@@ -15,7 +15,7 @@
       <view32></view32>
     </div>
     <div class="container2">
-<!--      <view33></view33>-->
+      <view33></view33>
     </div>
   </div>
 </template>
@@ -168,24 +168,25 @@ export default {
 
 .container {
   width: 560px;
-  height: 800px;
+  height: 880px;
   /*border: 2px solid black;*/
 }
 
 .container1 {
-  width: 4000px;
-  height: 1000px;
-  border: 2px solid black;
+  width: 830px;
+  height: 880px;
+  /*border: 2px solid black;*/
 }
 
 .container2 {
-  width: 0px;
-  height: 800px;
+  width: 400px;
+  height: 880px;
   /*border: 2px solid black;*/
 }
 
 .basic {
   /*border: 2px solid blue;*/
+  margin-bottom: 8px;
   width: 1275px;
   height: 25px;
   display: flex;

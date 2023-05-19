@@ -4,6 +4,8 @@
   </div>
   <button @click="creatRingChart(2)">circul_2</button>
   <button @click="creatRingChart(3)">circul_3</button>
+  <button @click="creatRingChart(4)">circul_4</button>
+  <button @click="creatRingChart(5)">circul_5</button>
 </template>
 
 <script>
@@ -11,6 +13,7 @@ import * as d3 from 'd3'
 import circleJson2 from '../../../backEnd/data/circul_2.json'
 import circleJson3 from '../../../backEnd/data/circul_3.json'
 import circleJson4 from '../../../backEnd/data/circul_4.json'
+import circleJson5 from '../../../backEnd/data/circul_5.json'
 
 export default {
   name: 'view3_3',
@@ -47,12 +50,16 @@ export default {
           fileName = circleJson4
           break
         }
+        case 5: {
+          fileName = circleJson5
+          break
+        }
       }
       const ringData = that.getCircleData(fileName)
       const main = d3.select('.container33 svg')
         .append('g')
         .classed('main', true)
-        .attr('transform', 'translate(' + 200 + ',' + 200 + ')')
+        .attr('transform', 'translate(' + 100 + ',' + 100 + ')')
       const views = main.append('g')
         .classed('views', true)
       views.selectAll('g')
@@ -145,7 +152,7 @@ export default {
 .container33 {
   width: 1000px;
   height: 1200px;
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
 </style>
