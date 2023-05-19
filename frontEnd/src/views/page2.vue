@@ -1,17 +1,22 @@
 <template>
-  <div class="container">
-    <div class="basic" v-for="value1 in values" v-bind:key="value1.id">
-      <div class="text">{{value1.names}}</div>
-      <button class="margin1 btn" :class="value1.eclat1>25 ? 'color1' : 'color0'" v-show=this.showAll[0]&this.isShow(0,value1.idx) @click="clickBtn(1, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat1}}%</button>
-      <button class="margin2 btn" :class="value1.eclat2>25 ? 'color2' : 'color0'" v-show=this.showAll[1]&this.isShow(1,value1.idx) @click="clickBtn(2, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat2}}%</button>
-      <button class="margin2 btn" :class="value1.eclat3>25 ? 'color3' : 'color0'" v-show=this.showAll[2]&this.isShow(2,value1.idx) @click="clickBtn(3, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat3}}%</button>
-      <button class="margin2 btn" :class="value1.eclat4>25 ? 'color4' : 'color0'" v-show=this.showAll[3]&this.isShow(3,value1.idx) @click="clickBtn(4, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat4}}%</button>
-      <button class="margin2 btn" :class="value1.eclat5>25 ? 'color5' : 'color0'" v-show=this.showAll[4]&this.isShow(4,value1.idx) @click="clickBtn(5, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat5}}%</button>
-      <button class="margin2 btn" :class="value1.eclat6>25 ? 'color6' : 'color0'" v-show=this.showAll[5]&this.isShow(5,value1.idx) @click="clickBtn(6, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat6}}%</button>
+  <div class="top">
+    <div class="container">
+      <div class="basic" v-for="value1 in values" v-bind:key="value1.id">
+        <div class="text">{{value1.names}}</div>
+        <button class="margin1 btn" :class="value1.eclat1>25 ? 'color1' : 'color0'" v-show=this.showAll[0]&this.isShow(0,value1.idx) @click="clickBtn(1, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat1}}%</button>
+        <button class="margin2 btn" :class="value1.eclat2>25 ? 'color2' : 'color0'" v-show=this.showAll[1]&this.isShow(1,value1.idx) @click="clickBtn(2, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat2}}%</button>
+        <button class="margin2 btn" :class="value1.eclat3>25 ? 'color3' : 'color0'" v-show=this.showAll[2]&this.isShow(2,value1.idx) @click="clickBtn(3, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat3}}%</button>
+        <button class="margin2 btn" :class="value1.eclat4>25 ? 'color4' : 'color0'" v-show=this.showAll[3]&this.isShow(3,value1.idx) @click="clickBtn(4, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat4}}%</button>
+        <button class="margin2 btn" :class="value1.eclat5>25 ? 'color5' : 'color0'" v-show=this.showAll[4]&this.isShow(4,value1.idx) @click="clickBtn(5, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat5}}%</button>
+        <button class="margin2 btn" :class="value1.eclat6>25 ? 'color6' : 'color0'" v-show=this.showAll[5]&this.isShow(5,value1.idx) @click="clickBtn(6, value1.idx,value1.id)">{{value1.id.slice(-1)}} | {{value1.eclat6}}%</button>
+      </div>
     </div>
-    <View31></View31>
-    <View32></View32>
-    <View33></View33>
+    <div class="container1">
+      <view32></view32>
+    </div>
+    <div class="container2">
+<!--      <view33></view33>-->
+    </div>
   </div>
 </template>
 
@@ -22,14 +27,12 @@ import eclat3 from '../../../backEnd/data/eclat_3.json'
 import eclat4 from '../../../backEnd/data/eclat_4.json'
 import eclat5 from '../../../backEnd/data/eclat_5.json'
 import eclat6 from '../../../backEnd/data/eclat_6.json'
-import view31 from '@/components/view31.vue'
 import view32 from '@/components/view32.vue'
 import view33 from '@/components/view33.vue'
 import axios from 'axios'
 export default {
   name: 'page_2',
   components: {
-    view31,
     view32,
     view33
   },
@@ -159,10 +162,26 @@ export default {
 
 <style scoped>
 
+.top {
+  display: flex;
+}
+
 .container {
   width: 560px;
   height: 800px;
+  /*border: 2px solid black;*/
+}
+
+.container1 {
+  width: 4000px;
+  height: 1000px;
   border: 2px solid black;
+}
+
+.container2 {
+  width: 0px;
+  height: 800px;
+  /*border: 2px solid black;*/
 }
 
 .basic {

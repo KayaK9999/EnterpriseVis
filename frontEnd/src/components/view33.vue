@@ -1,5 +1,5 @@
 <template>
-  <div class="container">
+  <div class="container33">
     <svg width="100%" height="100%"></svg>
   </div>
   <button @click="creatRingChart(2)">circul_2</button>
@@ -49,7 +49,7 @@ export default {
         }
       }
       const ringData = that.getCircleData(fileName)
-      const main = d3.select('.container svg')
+      const main = d3.select('.container33 svg')
         .append('g')
         .classed('main', true)
         .attr('transform', 'translate(' + 200 + ',' + 200 + ')')
@@ -142,7 +142,7 @@ export default {
 
 <style scoped>
 
-.container {
+.container33 {
   width: 1000px;
   height: 1200px;
   border: 2px solid black;

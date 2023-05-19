@@ -1,17 +1,16 @@
 <template>
-  <div class="container">
+  <div class="container32">
     <svg width="100%" height="100%"></svg>
   </div>
-  <button @click="creatScatterChart">111</button>
 </template>
 
 <script>
-import axisJson from '../../../backEnd/data/axis2.json'
-import pointJson2 from '../../../backEnd/data/point_2.json'
-import pointJson3 from '../../../backEnd/data/point_3.json'
-import pointJson4 from '../../../backEnd/data/point_4.json'
-import pointJson5 from '../../../backEnd/data/point_5.json'
-import pointJson6 from '../../../backEnd/data/point_6.json'
+import axisJson from '../../../backEnd/data/scatterStatic/axis1.json'
+import pointJson2 from '../../../backEnd/data/scatterStatic/point_2.json'
+import pointJson3 from '../../../backEnd/data/scatterStatic/point_3.json'
+import pointJson4 from '../../../backEnd/data/scatterStatic/point_4.json'
+import pointJson5 from '../../../backEnd/data/scatterStatic/point_5.json'
+import pointJson6 from '../../../backEnd/data/scatterStatic/point_6.json'
 import * as d3 from 'd3'
 
 export default {
@@ -49,7 +48,7 @@ export default {
     creatScatterChart () {
       // D3画图中this指代对象会发生改变
       const that = this
-      const main = d3.select('.container svg')
+      const main = d3.select('.container32 svg')
         .append('g')
         .classed('main', true)
         .attr('transform', 'translate(' + 0 + ',' + 0 + ')')
@@ -64,6 +63,7 @@ export default {
           return 'square' + (i + 1)
         })
       for (let i = 0; i < coordinations.length; i++) {
+        console.log(coordinations.length)
         const square = squares.select('.square' + (i + 1))
         const coordination = coordinations[i]
         square.append('rect')
@@ -234,7 +234,6 @@ export default {
       for (let i = 0; i < pointsData.length; i++) {
         const sliceX = this.calSliceY(pointsData[i].x, axisData1)
         const sliceY = this.calSliceY(pointsData[i].y, axisData2)
-        console.log('1')
         if (flag === 0) {
           const x = this.chartConfig.axisValue[axisData1.length - 1 - sliceX] + 40 - (pointsData[i].x - axisData1[sliceX].min) / (axisData1[sliceX].max - axisData1[sliceX].min) * 40
           const y = this.chartConfig.axisValue[axisData2.length - 1 - sliceY] + 40 - (pointsData[i].y - axisData2[sliceY].min) / (axisData2[sliceY].max - axisData2[sliceY].min) * 40
@@ -279,18 +278,18 @@ export default {
 
 <style scoped>
 
-.container {
-  width: 1200px;
-  height: 900px;
-  /*border: 2px solid black;*/
+.container32 {
+  width: 100%;
+  height: 100%;
+  /*border: 2px solid red;*/
 }
 
 .smallSquare rect {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
 .axiss rect {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
 }
 
 </style>
