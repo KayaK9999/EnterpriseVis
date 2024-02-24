@@ -69,7 +69,7 @@ def searchIndicator():
 # 测试
 @app.route('/')
 def test():
-    eclat_cluster('10_0', 6)
+    eclat_cluster('10_0', 1)
     point(6)
     circul(6)
     return 'hello'

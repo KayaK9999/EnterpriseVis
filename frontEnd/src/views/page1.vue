@@ -300,7 +300,7 @@ export default {
 
 .btnSubSub {
   width: 100%;
-  font-size: 2px;
+  font-size: 16px;
   margin-bottom: 5%;
   background: #366AB9;
   color: white;
